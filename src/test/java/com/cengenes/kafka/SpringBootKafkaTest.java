@@ -17,7 +17,6 @@ import com.cengenes.kafka.actors.Receiver;
 import com.cengenes.kafka.actors.Sender;
 
 @RunWith(SpringRunner.class)
-@SpringBootConfiguration
 @SpringBootTest
 public class SpringBootKafkaTest {
 
