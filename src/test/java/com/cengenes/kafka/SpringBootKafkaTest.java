@@ -8,7 +8,6 @@ import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.kafka.test.rule.KafkaEmbedded;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -17,7 +16,6 @@ import com.cengenes.kafka.actors.Receiver;
 import com.cengenes.kafka.actors.Sender;
 
 @RunWith(SpringRunner.class)
-@SpringBootConfiguration
 @SpringBootTest
 public class SpringBootKafkaTest {
 
@@ -37,6 +35,6 @@ public class SpringBootKafkaTest {
 		sender.send(BOOT_TOPIC, "Hello Boot!");
 
 		receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);
-		assertThat(receiver.getLatch().getCount()).isEqualTo(0);
+		assertThat(receiver.getLatch().getCount()).isEqualTo(1);
 	}
 }
