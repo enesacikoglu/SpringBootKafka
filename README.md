@@ -1,1 +1,1 @@
-# SpringBootKafka POC
+# SpringBootKafka
